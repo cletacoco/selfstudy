@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .drop-down {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            height: 200px;
+            transition: 1s;
+            line-height: 10px;
+        }
+
+        .n-list>li {
+            position: relative;
+        }
+
+        .drop-down>li{
+            list-style-type: none;
+            font-size: 14px;
+        }
+
+        .drop-down>li>a {
+            display: flex;
+            width: 100%;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .drop-down>li>a:hover {
+            color: navy;
+            font-weight: bold;
+        }
+
+        .n-list {
+            max-width: 1200px;
+            list-style-type: none;
+            display: flex;
+            gap: 10px;
+            margin: 0 auto;
+            align-items: center;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+         header {
+            background: linear-gradient(rgb(180, 120, 120) 50px, rgba(35,94,161,0.5)50px,
+            rgba(35, 94, 161, 0.5));
+            height: 50px;
+            overflow: hidden;
+            transition: 1s;
+            max-width: 1200px;
+            margin: 0 auto;
+        } 
+
+        .n-list a {
+            text-decoration: none;
+            color: navajowhite;
+        }
+
+        /* .n-list:hover .drop-down  {
+            height: 200px;
+        } */
+
+        @media screen and (max-width : 600px) {
+            header {
+                max-width: 600px;
+            }
+
+            .n-list a{
+                font-size: 16px;
+                font-weight: bold;
+                color: brown;
+                text-decoration: none;
+            }
+
+            .n-list {
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+        }
+
+    
+    </style>
+</head>
+<body> 
+    <!-- 드롭다운 메뉴의 형태 -->
+    <header>
+        <nav>
+            <ul class="n-list">
+                <li>
+                        <a href="#">네비게이션1
+                            <ul class="drop-down">
+                                <li><a href="#">submenu1</a></li>
+                                <li><a href="#">submenu2</a></li>
+                                <li><a href="#">submenu3</a></li>
+                                <li><a href="#">submenu4</a></li>
+                            </ul>
+                        </a>
+                </li>
+                <li>
+                        <a href="#">네비게이션2
+                            <ul class="drop-down">
+                                <li><a href="#">submenu4</a></li>
+                                <li><a href="#">submenu5</a></li>
+                                <li><a href="#">submenu6</a></li>
+                                <li><a href="#">submenu7</a></li>
+                            </ul>
+                        </a>
+                </li>
+                </ul>
+        </nav>
+    </header>
+    <script>
+        const header = document.querySelector('header');
+        const navgation = document.querySelector('.n-list');
+
+        navgation.addEventListener('mouseover', function(){
+            header.style.height = '200px';
+        })
+
+        navgation.addEventListener('mouseout' , function(){
+            header.style.height = '50px';
+        })
+    </script>
+</body>
+</html>
